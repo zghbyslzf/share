@@ -51,9 +51,9 @@
     if (window.__wxjs_is_wkwebview) { // IOS
         let isHttp = document.location.protocol;
         if (isHttp === 'http:') {
-            this.configUrl = '分享页面路径，http';
+            this.configUrl = 'home页面路径，http';
         } else {
-            this.configUrl = '分享页面路径，https';
+            this.configUrl = 'home页面路径，https';
         }
         } else { // 安卓
         this.configUrl = window.location.href.split('#')[0]
