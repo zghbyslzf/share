@@ -49,13 +49,13 @@
     // true 时 为 IOS 设备
     // false时 为 安卓 设备
     if (window.__wxjs_is_wkwebview) { // IOS
-    let isHttp = document.location.protocol;
-    if (isHttp === 'http:') {
-        this.configUrl = '分享页面路径，http';
-    } else {
-        this.configUrl = '分享页面路径，https';
-    }
-    } else { // 安卓
-    this.configUrl = window.location.href.split('#')[0]
+        let isHttp = document.location.protocol;
+        if (isHttp === 'http:') {
+            this.configUrl = '分享页面路径，http';
+        } else {
+            this.configUrl = '分享页面路径，https';
+        }
+        } else { // 安卓
+        this.configUrl = window.location.href.split('#')[0]
     }
 ```
