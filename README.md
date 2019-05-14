@@ -37,3 +37,25 @@
 ```
 
 修改好了之后，就可以测试分享效果了
+
+## 兼容
+
+以上只支持单文件分享，如果多层级分享，比如说从 home 页面进入 details 页面，要分享 details 页面，因为 ios 和安卓的存贮路径规则不一样，所以需要兼容
+
+兼容方法
+
+```
+    // window.__wxjs_is_wkwebview
+    // true 时 为 IOS 设备
+    // false时 为 安卓 设备
+    if (window.__wxjs_is_wkwebview) { // IOS
+    let isHttp = document.location.protocol;
+    if (isHttp === 'http:') {
+        this.configUrl = '分享页面路径，http';
+    } else {
+        this.configUrl = '分享页面路径，https';
+    }
+    } else { // 安卓
+    this.configUrl = window.location.href.split('#')[0]
+    }
+```
